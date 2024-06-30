@@ -9,14 +9,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link
+          async
           rel="stylesheet"
           href="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.min.css"
         />
         <script
+          async
           type="module"
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
         ></script>
         <script
+          async
           noModule
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
         ></script>
