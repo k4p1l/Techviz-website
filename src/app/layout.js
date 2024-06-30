@@ -20,11 +20,12 @@ export default function RootLayout({ children }) {
           noModule
           src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
         ></script>
+        <script
+          defer
+          src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        ></script>
       </head>
-      <body >
-        {children}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
