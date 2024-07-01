@@ -7,28 +7,26 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          async
-          rel="stylesheet"
-          href="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.min.css"
-        />
+      <head></head>
+      <body>
+        {children}
         <script
+          defer
           async
           type="module"
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
         ></script>
         <script
+          defer
           async
-          noModule
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+          nomodule
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
         ></script>
         <script
           defer
           src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         ></script>
-      </head>
-      <body>{children}</body>
+      </body>
     </html>
   );
 }

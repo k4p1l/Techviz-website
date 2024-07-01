@@ -1,11 +1,18 @@
+"use client";
+
 import React from "react";
 import "../../../public/css/About.css";
 import arrow from "../../../public/images/Arrow.png";
 import Image from "next/image";
 import Link from "next/link";
-import { Link as ScrollLink } from "react-scroll";
 
 const About = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Optional: animated scrolling
+    });
+  };
   return (
     <div className="h-[110vh] p-16 a-container bg-white flex gap-4 relative ">
       <div className="col1 w-full h-full flex flex-col">
@@ -46,23 +53,21 @@ const About = () => {
         </div>
       </div>
       <div className="col2 w-full h-full flex flex-col">
-        <ScrollLink to="home" smooth={true} duration={1000}>
-          <div className="box4 w-full h-full bg-[#beed3a]">
-            <div className="flex-[4] mt-5">
-              <h1>
-                Back <br /> to top
-              </h1>
+        <div className="box4 w-full h-full bg-[#beed3a]">
+          <div className="flex-[4] mt-5">
+            <h1 onClick={scrollToTop} className="cursor-pointer">
+              Back <br /> to top
+            </h1>
+          </div>
+          <div onClick={scrollToTop} className="circle">
+            <div className="arrow arrow1">
+              <ion-icon name="arrow-up-sharp"></ion-icon>
             </div>
-            <div class="circle">
-              <div class="arrow arrow1">
-                <ion-icon name="arrow-up-sharp"></ion-icon>
-              </div>
-              <div class="arrow2">
-                <ion-icon name="arrow-up-sharp"></ion-icon>
-              </div>
+            <div className="arrow2">
+              <ion-icon name="arrow-up-sharp"></ion-icon>
             </div>
           </div>
-        </ScrollLink>
+        </div>
 
         <div className="box5 w-full h-full bg-[#2a27e2] text-white">
           <h1>Get in touch</h1>
@@ -72,10 +77,8 @@ const About = () => {
             feedback.
             <br /> Please reach out to us using the contact form below.
           </p>
-          <Link legacyBehavior href="/form">
-            <a>
-              <Image className="w-32" src={arrow} alt="" />
-            </a>
+          <Link href="/form">
+            <Image className="w-32" src={arrow} alt="" />
           </Link>
         </div>
       </div>
