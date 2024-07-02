@@ -139,12 +139,12 @@
   transform: translate(0, 300%);
 }
 
-.circle:hover .arrow2 {
+.box4:hover .arrow2 {
   animation: marquee2 2.4s ease infinite;
   animation-delay: 0.2s;
 }
 
-.circle:hover .arrow {
+.box4:hover .arrow {
   animation: marquee 2.4s ease infinite;
 }
 

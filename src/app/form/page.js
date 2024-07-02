@@ -1,25 +1,75 @@
 import React from "react";
+import "../../../public/css/Form.css";
+import img from "../../../public/images/Google.svg";
+import Image from "next/image";
 
 const FormPage = () => {
   return (
-    <div>
-      <h1>Contact Us</h1>
-      <form>
-        {/* Add form fields here */}
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+    <div class="form-container">
+      <a href="/">
+        <h1 className="link">
+          <ion-icon name="arrow-back-sharp"></ion-icon> Go back
+        </h1>
+      </a>
+      <h1 className="text-center text-2xl mb-8 contact-us">Contact Us</h1>
+      <form
+        className="flex flex-col gap-8 cu-form "
+        action="https://docs.google.com/forms/d/e/1FAIpQLSfy7wrOR_BH68KlKcAjp20EzCKhGHBf-DzQ4jMAJcX7EvimCg/formResponse"
+      >
+        <div className="form-field">
+          <label className="label" htmlFor="entry.2005620554">
+            Name:
+          </label>
+          <input
+            className="cu-input"
+            type="text"
+            id="entry.2005620554"
+            name="entry.2005620554"
+            required
+          />
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+        <div className="form-field">
+          <label className="label" htmlFor="entry.1045781291">
+            Email:
+          </label>
+          <input
+            className="cu-input"
+            type="email"
+            id="entry.1045781291"
+            name="entry.1045781291"
+            required
+          />
         </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+        <div className="form-field">
+          <label className="label" htmlFor="entry.1065046570">
+            Subject:
+          </label>
+          <input
+            type="text"
+            className="cu-input"
+            id="entry.1065046570"
+            name="entry.1065046570"
+          />
         </div>
-        <button type="submit">Submit</button>
+        <div className="form-field">
+          <label className="label" htmlFor="entry.1166974658">
+            Message:
+          </label>
+          <input
+            type="text"
+            className="cu-input"
+            id="entry.1166974658"
+            name="entry.1166974658"
+          />
+        </div>
+        <button className="submit-btn" type="submit">
+          <p>Submit</p>
+          <ion-icon name="arrow-forward-sharp"></ion-icon>
+        </button>
       </form>
+      <div className="footer">
+        Powered By <span>Google</span> Forms
+      </div>
     </div>
   );
 };

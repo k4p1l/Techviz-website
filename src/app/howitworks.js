@@ -2,7 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import img from "../../public/images/Untitled2.png";
 import Image from "next/image";
-import "../../public/css/HowItWorks.css"
+import "../../public/css/HowItWorks.css";
 
 const mode1 = [
   {

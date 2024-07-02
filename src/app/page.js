@@ -20,7 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.05,
+      lerp: 0.08,
       infinite: false,
     });
 
