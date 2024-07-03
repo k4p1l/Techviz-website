@@ -4,14 +4,13 @@ import React from "react";
 import "../../../public/css/About.css";
 import arrow from "../../../public/images/Arrow.png";
 import Image from "next/image";
-import Link from "next/link";
+import { Link, Element } from "react-scroll";
+import { useRouter } from "next/navigation";
 
 const About = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth", // Optional: animated scrolling
-    });
+  const router = useRouter();
+  const navigateToForm = () => {
+    router.push("/form");
   };
   return (
     <div className="h-[110vh] p-16 a-container bg-white flex gap-4 relative ">
@@ -53,13 +52,18 @@ const About = () => {
         </div>
       </div>
       <div className="col2 w-full h-full flex flex-col">
-        <div className="box4 w-full h-full bg-[#beed3a]">
+        <Link
+          to="section1"
+          smooth={true}
+          duration={2000}
+          className="box4 w-full h-full bg-[#beed3a]"
+        >
           <div className="flex-[4] mt-5">
-            <h1 onClick={scrollToTop} className="cursor-pointer">
+            <h1 className="cursor-pointer">
               Back <br /> to top
             </h1>
           </div>
-          <div onClick={scrollToTop} className="circle">
+          <div className="circle">
             <div className="arrow arrow1">
               <ion-icon name="arrow-up-sharp"></ion-icon>
             </div>
@@ -67,7 +71,7 @@ const About = () => {
               <ion-icon name="arrow-up-sharp"></ion-icon>
             </div>
           </div>
-        </div>
+        </Link>
 
         <div className="box5 w-full h-full bg-[#2a27e2] text-white">
           <h1>Get in touch</h1>
@@ -77,9 +81,9 @@ const About = () => {
             feedback.
             <br /> Please reach out to us using the contact form below.
           </p>
-          <Link href="/form">
+          <div onClick={navigateToForm}>
             <Image className="w-32" src={arrow} alt="" />
-          </Link>
+          </div>
         </div>
       </div>
     </div>
